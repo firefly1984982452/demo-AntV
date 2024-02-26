@@ -8,16 +8,26 @@
         <li @click="login"><a>提交Issue</a></li>
         <li @click="login"><a>所有产品<i class="iconfont icon-antvzhankai1"></i></a></li>
         <li @click="login"><i class="iconfont icon-antvzhongyingwen"></i></li>
-        <li @click="login"><i class="iconfont icon-antvwechat"></i></li>
+        <li @click="login">
+          <Popover content={content} title="微信扫一扫关注">
+            <i class="iconfont icon-antvwechat"></i>
+          </Popover>
+        </li>
         <li @click="login"><i class="iconfont icon-antvgithub"></i></li>
       </ul>
+      <!-- <QRCode value="文字" /> -->
     </nav>
   </header>
+  <div class="popup-list-all">
+    <Product />
+  </div>
 </template>
 
 <script setup lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { Popover, QRCode } from 'ant-design-vue';
+import Product from './Product.vue';
 const router = useRouter()
 const logoURL = ref('https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*A-lcQbVTpjwAAAAAAAAAAAAADmJ7AQ/original')
 defineComponent({
@@ -51,15 +61,18 @@ header {
 
       li {
         color: #424e66;
-        &:not(:last-child){
+
+        &:not(:last-child) {
           margin-right: 8px;
         }
+
         font-size: 16px;
         display: inline-block;
         transition: box-shadow .3s;
         box-shadow: 0 2px 0 transparent inset;
 
-        a,i {
+        a,
+        i {
           cursor: pointer;
           box-sizing: border-box;
           padding: 0 12px;
@@ -69,7 +82,8 @@ header {
           display: flex;
           border-radius: 6px;
         }
-        i{
+
+        i {
           padding: 0 8px;
           font-size: 16px;
         }
@@ -80,12 +94,15 @@ header {
         }
 
         .icon-antvzhankai1 {
-          font-size:6px;
+          font-size: 6px;
           margin-left: 2px;
           width: 14px;
         }
       }
     }
   }
+}
+.popup-list-all{
+  transition: all .5s;
 }
 </style>
