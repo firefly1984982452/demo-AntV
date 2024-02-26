@@ -6,7 +6,7 @@
 
 #### 软件架构
 
-本网站采用`Vite`+`Vue3`+`AntV`+`Ant Design`开发。
+本网站采用`Vite` + `Vue3` + `AntV` + `Ant Design` + `Pinia` 开发。
 
 #### 安装教程
 
