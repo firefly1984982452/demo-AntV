@@ -5,14 +5,14 @@
   </div>
 </template>
 <script setup lang="ts">
-import TopBar from '@/components/Top.vue'
+import TopBar from '@/components/header/Top.vue'
 </script>
 
 
 <style scoped lang="scss">
 .content{
-  width: 100%;
-  height: 100px;
+  width: 100vw;
+  height: 100vh;
   h1{
     color: #f00;
   }
