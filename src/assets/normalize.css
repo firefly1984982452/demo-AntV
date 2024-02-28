@@ -43,7 +43,9 @@ pre {
   font-family: monospace, monospace;
   font-size: 1em;
 }
-
+p{
+  margin: 0;
+}
 a {
   /*移除IE10中的灰色背景*/
   background-color: transparent;
