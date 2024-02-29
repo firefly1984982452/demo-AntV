@@ -6,7 +6,8 @@
         <li @click="login"><a>设计语言</a></li>
         <li @click="main"><a>场景案例</a></li>
         <li @click="login"><a>提交Issue</a></li>
-        <li @click="login"><a>所有产品<i class="iconfont icon-antvzhankai1"></i></a></li>
+        <li @click="showProductFn" @mouseenter="showProductFn" @mouseleave="showProductFn"><a>所有产品<i
+              class="iconfont icon-antvzhankai1"></i></a></li>
         <li @click="login"><i class="iconfont icon-antvzhongyingwen"></i></li>
         <li @click="login">
           <Popover content={content} title="微信扫一扫关注">
@@ -18,7 +19,7 @@
       <!-- <QRCode value="文字" /> -->
     </nav>
   </header>
-  <div class="popup-list-all">
+  <div class="popup-list-all" v-show="showProductList">
     <Product />
   </div>
 </template>
@@ -33,6 +34,10 @@ const logoURL = ref('https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*A-lc
 defineComponent({
   name: 'TopBar',
 })
+const showProductList = ref(false);
+const showProductFn = () => {
+  showProductList.value = !showProductList.value;
+}
 const login = () => {
   router.push('/login')
 }
@@ -102,7 +107,10 @@ header {
     }
   }
 }
-.popup-list-all{
+
+.popup-list-all {
+  height: 100%;
   transition: all .5s;
+  background-color: rgba(0, 0, 0, .1);
 }
 </style>

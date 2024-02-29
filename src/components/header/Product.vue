@@ -59,6 +59,7 @@ const filterProductType = (val: string) => {
 </script>
 <style scoped lang="scss">
 .product-page {
+  background-color: #fff;
   padding: 20px 40px;
 
   ul {
